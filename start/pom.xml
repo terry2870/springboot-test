@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.yoho.springboot</groupId>
@@ -10,7 +12,7 @@
 	<name>springboot-test-start</name>
 	<url>http://maven.apache.org</url>
 	<packaging>war</packaging>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -20,12 +22,15 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>com.yoho.springboot</groupId>
 			<artifactId>springboot-test-mvc</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.yoho.springboot</groupId>
+			<artifactId>springboot-test-dal</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -50,19 +55,17 @@
 							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中 -->
 						</goals>
 						<!--可以生成不含依赖包的不可执行Jar包 -->
-						<!-- <configuration>
-							<classifier>exec</classifier>
-						</configuration> -->
+						<!-- <configuration> <classifier>exec</classifier> </configuration> -->
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 		<resources>
-			<!-- 打包时将jsp文件拷贝到META-INF目录下-->
+			<!-- 打包时将jsp文件拷贝到META-INF目录下 -->
 			<resource>
 				<!-- 指定resources插件处理哪个目录下的资源文件 -->
 				<directory>src/main/webapp</directory>
-				<!--注意此次必须要放在此目录下才能被访问到-->
+				<!--注意此次必须要放在此目录下才能被访问到 -->
 				<targetPath>META-INF/resources</targetPath>
 				<includes>
 					<include>**/**</include>

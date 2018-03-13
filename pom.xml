@@ -32,6 +32,11 @@
 				<artifactId>springboot-test-start</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.yoho.springboot</groupId>
+				<artifactId>springboot-test-dal</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -46,10 +51,16 @@
 			<artifactId>hp-tools-jsptags</artifactId>
 			<version>${hp.tools.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<version>3.5.2</version>
+		</dependency>
 	</dependencies>
 
 	<modules>
 		<module>mvc</module>
 		<module>start</module>
-	</modules>
+    <module>dal</module>
+  </modules>
 </project>
