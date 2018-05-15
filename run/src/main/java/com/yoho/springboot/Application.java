@@ -11,10 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
 
-import com.hp.core.common.utils.SpringContextUtil;
-import com.yoho.springboot.dal.ITestTableDAO;
-import com.yoho.springboot.dal.model.TestTable;
-
 /**
  * @author ping.huang
  * 2017年8月28日

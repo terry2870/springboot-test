@@ -1,0 +1,7 @@
+datasources:
+   eie:
+      servers:
+         master:
+           - 127.0.0.1:3306
+      username: yh_test
+      password: yh_test

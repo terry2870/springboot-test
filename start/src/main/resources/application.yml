@@ -1,0 +1,22 @@
+server:
+   context-path: /helloboot
+   port: 8081
+
+#spring:
+#   freemarker:
+#      charset: UTF-8
+#      content-type: text/html; charset=UTF-8
+#      template-loader-path : /WEN-INF/views/freemarker/
+#      suffix: .ftl
+
+spring:
+   mvc:
+      view:
+         prefix: /WEB-INF/jsp/
+         suffix: .jsp
+
+hp:
+   core:
+      dao:
+         interceptor:
+            expression: execution(* com.yoho.springboot.dal.*DAO.*(..))

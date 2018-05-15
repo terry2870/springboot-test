@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.7.RELEASE</version>
+		<version>1.5.12.RELEASE</version>
 	</parent>
 
 	<groupId>com.yoho.springboot</groupId>
@@ -16,7 +17,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<hp.tools.version>0.0.1-SNAPSHOT</hp.tools.version>
+		<hp.core.version>0.0.1-SNAPSHOT</hp.core.version>
+		<mysql.version>6.0.5</mysql.version>
 	</properties>
 
 
@@ -27,14 +29,16 @@
 				<artifactId>springboot-test-mvc</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<!-- <dependency> <groupId>com.yoho.springboot</groupId> <artifactId>springboot-test-start</artifactId> 
+				<version>${project.version}</version> </dependency> -->
 			<dependency>
 				<groupId>com.yoho.springboot</groupId>
-				<artifactId>springboot-test-start</artifactId>
+				<artifactId>springboot-test-dal</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.yoho.springboot</groupId>
-				<artifactId>springboot-test-dal</artifactId>
+				<artifactId>springboot-test-run</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -45,22 +49,28 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hp.core</groupId>
+			<artifactId>hp-core-mybatis</artifactId>
+			<version>${hp.core.version}</version>
+		</dependency>
+		
 		
 		<dependency>
-			<groupId>com.hp.tools</groupId>
-			<artifactId>hp-tools-jsptags</artifactId>
-			<version>${hp.tools.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>tk.mybatis</groupId>
-			<artifactId>mapper</artifactId>
-			<version>3.5.2</version>
+			<groupId>com.gitee.hengboy</groupId>
+			<artifactId>mybatis-enhance-spring-boot-starter</artifactId>
+			<version>1.0.2.RELEASE</version>
 		</dependency>
 	</dependencies>
 
 	<modules>
 		<module>mvc</module>
-		<module>start</module>
-    <module>dal</module>
-  </modules>
+		<module>dal</module>
+		<module>run</module>
+	</modules>
 </project>
