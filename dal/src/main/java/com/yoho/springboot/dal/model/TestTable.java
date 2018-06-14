@@ -3,6 +3,8 @@
  */
 package com.yoho.springboot.dal.model;
 
+import javax.persistence.Id;
+
 import com.hp.core.common.beans.BaseBean;
 
 /**
@@ -16,9 +18,11 @@ public class TestTable extends BaseBean {
 	 */
 	private static final long serialVersionUID = -3206214461546085194L;
 
+	@Id
 	private Integer id;
 	private String simplified;
 	private String title;
+	private String testName;
 	public Integer getId() {
 		return id;
 	}
@@ -36,6 +40,12 @@ public class TestTable extends BaseBean {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getTestName() {
+		return testName;
+	}
+	public void setTestName(String testName) {
+		this.testName = testName;
 	}
 	
 }

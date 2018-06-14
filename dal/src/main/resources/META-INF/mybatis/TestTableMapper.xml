@@ -4,9 +4,19 @@
 	<resultMap id="BaseResultMap" type="com.yoho.springboot.dal.model.TestTable">
 
 	</resultMap>
-	
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap">
-		select * from test_table
-	</select>
 
+	<select id="selectOne" resultMap="BaseResultMap">
+		select * from test_table where id=#{id}
+	</select>
+	
+	<insert id="insert2" useGeneratedKeys="true" keyProperty="id">
+		insert into test_table (title, simplified, test_name) values (#{title}, #{simplified}, #{testName})
+	</insert>
+	
+	<insert id="insertTest">
+		insert into test_table (title, simplified, test_name) values (#{title}, #{simplified}, #{testName})
+		<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+	</insert>
 </mapper>
