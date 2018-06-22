@@ -2,6 +2,6 @@ datasources:
    eie:
       servers:
          master:
-           - @eie.master.url@
+           - "@eie.master.url@"
       username: yh_test
       password: yh_test

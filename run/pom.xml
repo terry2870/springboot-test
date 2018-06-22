@@ -22,9 +22,6 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<properties>
-				<eie.master.url>dev</eie.master.url>
-			</properties>
 			<build>
 				<filters>
 					<filter>${basedir}/src/main/resources/dev/config.properties</filter>
@@ -34,9 +31,6 @@
 		<profile>
 			<!-- 生产环境 -->
 			<id>prod</id>
-			<properties>
-				<eie.master.url>prod</eie.master.url>
-			</properties>
 			<build>
 				<filters>
 					<filter>${basedir}/src/main/resources/prod/config.properties</filter>
