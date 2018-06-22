@@ -28,9 +28,13 @@ public class Example {
 	private ITestTableDAO testTableDAO;
 	@Autowired
 	private IBillInfoDAO billInfoDAO;
+	@Autowired
+	private TestAAA t;
 	
 	@RequestMapping("/")
 	String home() {
+		log.info("t1 = {}", t);
+		log.info("t2 = {}", TestAAA.getInstance());
 		return "Hello World!";
 	}
 

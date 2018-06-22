@@ -26,10 +26,15 @@ public class Example2 {
 	static Logger log = LoggerFactory.getLogger(Example2.class);
 	@Autowired
 	private ITestTableDAO testTableDAO;
+	@Autowired
+	private TestAAA t;
 	
 	@RequestMapping("/home")
 	public String home(String str, HttpServletRequest request) {
 		log.info("enter home with str={}", str);
+		
+		
+		
 		request.setAttribute("str1", "扎实打发斯蒂芬");
 		return "1";
 	}
