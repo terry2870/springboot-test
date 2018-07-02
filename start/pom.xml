@@ -31,6 +31,11 @@
 			<groupId>com.yoho.springboot</groupId>
 			<artifactId>springboot-test-dal</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.hp.core</groupId>
+			<artifactId>hp-core-netty</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

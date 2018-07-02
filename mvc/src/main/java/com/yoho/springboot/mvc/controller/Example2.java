@@ -46,10 +46,10 @@ public class Example2 {
 	
 	@RequestMapping("/ftl/{myName}")
 	public String ftl(@PathVariable String myName, HttpServletRequest request) {
-		TestTable test = testTableDAO.selectByPrimaryKey(1);
+		TestTable test = testTableDAO.selectByPrimaryKey(4);
 		request.setAttribute("name", myName);
 		request.setAttribute("sex", 0);
-		request.setAttribute("friends", Lists.newArrayList(test));
+		request.setAttribute("friends", test == null ? null : Lists.newArrayList(test));
 		return "123";
 	}
 }
