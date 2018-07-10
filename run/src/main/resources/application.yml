@@ -7,7 +7,7 @@ spring:
       request-context-attribute: request
       charset: UTF-8
       content-type: text/html; charset=UTF-8
-#      template-loader-path : /WEN-INF/views/freemarker/
+      template-loader-path : classpath:/templates/
 #      suffix: .ftl
 
 #spring:
