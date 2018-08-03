@@ -32,9 +32,7 @@ public class Example2 {
 	private ITestTableDAO testTableDAO;
 	@Autowired
 	private TestAAA t;
-	
-	@Value("${spring.freemarker.template-loader-path}")
-	String path;
+
 	
 	@RequestMapping("/home")
 	public String home(String str, HttpServletRequest request) {
@@ -55,5 +53,16 @@ public class Example2 {
 		request.setAttribute("sex", 0);
 		request.setAttribute("testList", testList);
 		return "123";
+	}
+	
+	@RequestMapping("/jsp/{myName}")
+	public String jsp(@PathVariable String myName, HttpServletRequest request) {
+		log.info("entre 888888");
+		List<TestTable> testList = testTableDAO.selectListByParams(null);
+		request.setAttribute("name", myName);
+		request.setAttribute("sex", 0);
+		request.setAttribute("str", "奥术大师多");
+		request.setAttribute("testList", testList);
+		return "1";
 	}
 }

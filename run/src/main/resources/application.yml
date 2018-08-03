@@ -1,6 +1,11 @@
 server:
    context-path: /helloboot
+   servlet:
+      context-path: /helloboot
    port: 8081
+   jsp-servlet:
+      init-parameters:
+         development: true
 
 spring:
    freemarker:
@@ -8,16 +13,16 @@ spring:
       charset: UTF-8
       content-type: text/html; charset=UTF-8
       template-loader-path : classpath:/templates/
-#      suffix: .ftl
-
-#spring:
+      suffix: .ftl
 #   mvc:
 #      view:
 #         prefix: /WEB-INF/jsp/
 #         suffix: .jsp
+         
 
 hp:
    core:
       dao:
          interceptor:
             expression: execution(* com.yoho.springboot.dal.*DAO.*(..))
+            
