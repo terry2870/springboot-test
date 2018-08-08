@@ -1,8 +1,0 @@
-server.context-path=/helloboot
-server.port=8081
-
-spring.mvc.view.prefix=/WEB-INF/jsp/
-spring.mvc.view.suffix=.jsp
-
-
-hp.core.dao.interceptor.expression=execution(* com.yoho.springboot.dal.*DAO.*(..))

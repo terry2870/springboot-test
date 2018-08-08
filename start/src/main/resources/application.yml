@@ -1,22 +1,35 @@
 server:
-   context-path: /helloboot
+   servlet:
+      context-path: /
    port: 8081
-
-#spring:
-#   freemarker:
-#      charset: UTF-8
-#      content-type: text/html; charset=UTF-8
-#      template-loader-path : /WEN-INF/views/freemarker/
-#      suffix: .ftl
+   jsp-servlet:
+      init-parameters:
+         development: true
 
 spring:
-   mvc:
-      view:
-         prefix: /WEB-INF/jsp/
-         suffix: .jsp
+   freemarker:
+      request-context-attribute: request
+      charset: UTF-8
+      content-type: text/html; charset=UTF-8
+      template-loader-path : classpath:/templates/
+      suffix: .ftl
+   session:
+      store-type: redis
+
+redis:
+   readonly:
+      proxy:
+         address: 192.168.102.17
+   proxy:
+      address: 192.168.102.17
+#   mvc:
+#      view:
+#         prefix: /WEB-INF/jsp/
+#         suffix: .jsp
 
 hp:
    core:
       dao:
          interceptor:
-            expression: execution(* com.yoho.springboot.dal.*DAO.*(..))
+            expression: execution(* com.yoho.springboot.dal.*DAO.*(..)) or execution(* com.hp.core.webjars.dal.*DAO.*(..))
+            

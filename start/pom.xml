@@ -11,18 +11,36 @@
 	<artifactId>springboot-test-start</artifactId>
 	<name>springboot-test-start</name>
 	<url>http://maven.apache.org</url>
-	<packaging>war</packaging>
-
+	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
+	<profiles>
+		<profile>
+			<!-- 本地开发环境 -->
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<filters>
+					<filter>${basedir}/src/main/resources/dev/config.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<!-- 生产环境 -->
+			<id>prod</id>
+			<build>
+				<filters>
+					<filter>${basedir}/src/main/resources/prod/config.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+
+	<dependencies>
 		<dependency>
 			<groupId>com.yoho.springboot</groupId>
 			<artifactId>springboot-test-mvc</artifactId>
@@ -32,59 +50,62 @@
 			<artifactId>springboot-test-dal</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.hp.core</groupId>
-			<artifactId>hp-core-netty</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>provided</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<!-- 为jar包取名 -->
-		<!-- <finalName>springboot-test</finalName> -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<!-- The plugin rewrites your manifest -->
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration><!-- 指定该Main Class为全局的唯一入口 -->
-					<mainClass>com.yoho.springboot.Application</mainClass>
-					<!-- <layout>ZIP</layout> -->
+				<configuration>
+					<mainClass>com.Application</mainClass>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中 -->
-						</goals>
-						<!--可以生成不含依赖包的不可执行Jar包 -->
-						<!-- <configuration> <classifier>exec</classifier> </configuration> -->
-					</execution>
-				</executions>
 			</plugin>
+			<!-- <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-war-plugin</artifactId>  
+                <configuration>  
+                    <failOnMissingWebXml>false</failOnMissingWebXml>  
+                </configuration>  
+            </plugin> -->
 		</plugins>
 		<resources>
-			<!-- 打包时将jsp文件拷贝到META-INF目录下 -->
 			<resource>
-				<!-- 指定resources插件处理哪个目录下的资源文件 -->
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.yml</include>
+				</includes>
+				<excludes>
+					<exclude>dev/*</exclude>
+					<exclude>prod/*</exclude>
+				</excludes>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>static/**</include>
+					<include>templates/**</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<!-- 
+			如果使用jar运行，这句要加上
+			<resource>
 				<directory>src/main/webapp</directory>
-				<!--注意此次必须要放在此目录下才能被访问到 -->
 				<targetPath>META-INF/resources</targetPath>
 				<includes>
 					<include>**/**</include>
 				</includes>
 			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/**</include>
-				</includes>
-				<filtering>false</filtering>
-			</resource>
+			 -->
 		</resources>
 	</build>
-
-
 </project>

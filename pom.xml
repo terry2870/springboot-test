@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -38,7 +37,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.yoho.springboot</groupId>
-				<artifactId>springboot-test-run</artifactId>
+				<artifactId>springboot-test-start</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -49,6 +48,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -65,7 +68,12 @@
 
 		<dependency>
 			<groupId>com.hp.core</groupId>
-			<artifactId>hp-core-mybatis</artifactId>
+			<artifactId>hp-core-webjars</artifactId>
+			<version>${hp.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.core</groupId>
+			<artifactId>hp-core-redis</artifactId>
 			<version>${hp.core.version}</version>
 		</dependency>
 	</dependencies>
@@ -73,6 +81,6 @@
 	<modules>
 		<module>mvc</module>
 		<module>dal</module>
-		<module>run</module>
-	</modules>
+		<module>start</module>
+  </modules>
 </project>

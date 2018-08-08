@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @ImportResource(locations = {"classpath*:META-INF/spring/spring-*.xml"})
-@MapperScan(basePackages = {"com.yoho.springboot.dal"})
+@MapperScan(basePackages = {"com.yoho.springboot.dal", "com.hp.core.webjars.dal"})
 public class Application {
 
 	static Logger log = LoggerFactory.getLogger(Application.class);

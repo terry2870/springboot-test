@@ -1,9 +1,0 @@
-[{
-	"alias" : "eie",
-	"databaseName" : "eie",
-	"masterIpPort" : "127.0.0.1:3306",
-	"slaveIpPort" : "127.0.0.1:3306",
-	"username" : "eie",
-	"password" : "123456",
-	"defaultDatabase" : true
-}]

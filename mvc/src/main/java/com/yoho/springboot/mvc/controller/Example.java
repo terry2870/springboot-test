@@ -31,12 +31,6 @@ public class Example {
 	@Autowired
 	private TestAAA t;
 	
-	@RequestMapping("/")
-	String home() {
-		log.info("t1 = {}", t);
-		log.info("t2 = {}", TestAAA.getInstance());
-		return "Hello World!";
-	}
 
 	@RequestMapping("/select1/{id}")
 	public Response<TestTable> select1(@PathVariable Integer id) {
