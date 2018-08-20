@@ -13,42 +13,7 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 	
-	<bean id="urlInterceptor" class="com.hp.core.webjars.interceptor.UrlInterceptor">
-		<!-- 一级免过滤列表（不需要登录，就可以访问的url） -->
-		<property name="firstNoFilterList">
-			<list>
-				<value>doLogin</value>
-				<value>login</value>
-				<value>refeshCheckCode</value>
-				<value>forward</value>
-			</list>
-		</property>
-		<!-- 只要登录，就能访问的url -->
-		<property name="secondNoFilterList">
-			<list>
-				<value>NoFilterController.do</value>
-				<value>queryUserSessionMenu.do</value>
-				<value>querySessionButtonByMenuId.do</value>
-			</list>
-		</property>
-		<property name="superManagerList">
-			<list>
-				<value>admin</value>
-			</list>
-		</property>
-	</bean>
+
 	
-	
-	<mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<mvc:exclude-mapping path="/error"/>
-			<mvc:exclude-mapping path="/static/**"/>
-			<mvc:exclude-mapping path="/js/**"/>
-			<mvc:exclude-mapping path="/css/**"/>
-			<mvc:exclude-mapping path="/images/**"/>
-			<ref bean="urlInterceptor" />
-		</mvc:interceptor>
-	</mvc:interceptors>
 </beans>
 

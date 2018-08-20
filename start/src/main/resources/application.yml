@@ -1,5 +1,7 @@
 server:
    servlet:
+      session:
+         timeout: 1800
       context-path: /
    port: 8081
    jsp-servlet:
@@ -14,22 +16,21 @@ spring:
       template-loader-path : classpath:/templates/
       suffix: .ftl
    session:
-      store-type: redis
+      store-type: none
 
 redis:
    readonly:
       proxy:
          address: 192.168.102.17
+         port: 6380
    proxy:
       address: 192.168.102.17
-#   mvc:
-#      view:
-#         prefix: /WEB-INF/jsp/
-#         suffix: .jsp
+      port: 6380
 
 hp:
    core:
       dao:
          interceptor:
             expression: execution(* com.yoho.springboot.dal.*DAO.*(..)) or execution(* com.hp.core.webjars.dal.*DAO.*(..))
-            
+      firstNoFilterList:
+      secondNoFilterList:
