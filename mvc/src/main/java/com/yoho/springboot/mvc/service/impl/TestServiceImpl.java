@@ -11,7 +11,7 @@ import com.yoho.springboot.mvc.service.TestService;
  * @author ping.huang
  * 2017年10月20日
  */
-@Service
+@Service("TestServiceImpl:1234")
 public class TestServiceImpl implements TestService {
 
 

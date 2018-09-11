@@ -5,3 +5,12 @@ datasources:
            - "@eie.master.url@"
       username: yh_test
       password: yh_test
+      
+   yh_mars:
+      servers:
+         master:
+           - "@eie.master.url@"
+      username: yh_test
+      password: yh_test
+      daos:
+        - com.yoho.springboot.dal.TblLoginLogDAO

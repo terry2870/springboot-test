@@ -16,7 +16,7 @@ spring:
       template-loader-path : classpath:/templates/
       suffix: .ftl
    session:
-      store-type: none
+      store-type: redis
 
 redis:
    readonly:
