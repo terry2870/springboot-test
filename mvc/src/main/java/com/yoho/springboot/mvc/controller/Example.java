@@ -29,7 +29,7 @@ public class Example {
 	@Autowired
 	private IBillInfoDAO billInfoDAO;
 	@Autowired
-	private TestAAA t;
+	private TestController t;
 	
 
 	@RequestMapping("/select1/{id}")

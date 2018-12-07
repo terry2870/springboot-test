@@ -10,7 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
+
+import com.hp.core.common.utils.SpringContextUtil;
 
 /**
  * @author ping.huang
@@ -28,6 +31,10 @@ public class Application {
 		try {
 			SpringApplication.run(Application.class, args);
 			
+			FreeMarkerViewResolver f = SpringContextUtil.getBean(FreeMarkerViewResolver.class);
+			System.out.println(f);
+			InternalResourceViewResolver i = SpringContextUtil.getBean(InternalResourceViewResolver.class);
+			System.out.println(i);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

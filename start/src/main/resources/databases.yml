@@ -9,7 +9,7 @@ datasources:
    yh_mars:
       servers:
          master:
-           - "@eie.master.url@"
+           - "@yhmars.master.url@"
       username: yh_test
       password: yh_test
       daos:

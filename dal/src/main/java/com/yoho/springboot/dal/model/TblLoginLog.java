@@ -6,6 +6,11 @@ import com.hp.core.common.beans.BaseBean;
 
 public class TblLoginLog extends BaseBean {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8386991363836900414L;
+
 	@Id
     private Integer id;
 
