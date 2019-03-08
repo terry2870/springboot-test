@@ -1,21 +1,21 @@
 <#macro panel 
-	id=""						<#-- panel  id -->
+	id=""							<#-- panel  id -->
 	title=""						<#-- panel 标题 -->
-	panelClass=""				<#-- class -->
-	panelStyle=""				<#-- 样式 -->
+	panelClass=""					<#-- class -->
+	panelStyle=""					<#-- 样式 -->
 	headClass=""					<#-- head class -->
 	headStyle=""					<#-- head 样式 -->
 	headTitleSize=""				<#-- 标题的大小 （1，2，3） -->
 	bodyClass=""					<#-- 内容 class -->
 	bodyStyle=""					<#-- 内容样式 -->
-	footerClass=""				<#-- footer class -->
-	footerStyle=""				<#-- footer 样式 -->
-	showFooter="false"			<#-- 是否显示 footer -->
-	closeAble="false"			<#-- 是否显示关闭按钮 -->
-	content=""					<#-- 内容 -->
-	url=""						<#-- 从远端地址加载内容 -->
+	footerClass=""					<#-- footer class -->
+	footerStyle=""					<#-- footer 样式 -->
+	showFooter="false"				<#-- 是否显示 footer -->
+	closeAble="false"				<#-- 是否显示关闭按钮 -->
+	content=""						<#-- 内容 -->
+	url=""							<#-- 从远端地址加载内容 -->
 	footerContent=""				<#-- footer 内容 -->
-	onClose="$.noop"				<#-- 当关闭的时候，执行的操作 -->
+	onClose=$.noop					<#-- 当关闭的时候，执行的操作 -->
 	options=""
 >
 	<#assign op = options ? eval />

@@ -31,6 +31,15 @@
 			</build>
 		</profile>
 		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<build>
+				<filters>
+					<filter>${basedir}/src/main/resources/application-test.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
 			<!-- 生产环境 -->
 			<id>prod</id>
 			<build>
