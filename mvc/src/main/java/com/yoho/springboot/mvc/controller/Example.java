@@ -28,8 +28,6 @@ public class Example {
 	private ITestTableDAO testTableDAO;
 	@Autowired
 	private IBillInfoDAO billInfoDAO;
-	@Autowired
-	private TestController t;
 	
 
 	@RequestMapping("/select1/{id}")

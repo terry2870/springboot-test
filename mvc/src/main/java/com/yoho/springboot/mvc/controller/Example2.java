@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.ibatis.jdbc.SQL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.common.collect.Lists;
 import com.hp.core.common.exceptions.CommonException;
-import com.yoho.springboot.dal.IBillInfoDAO;
 import com.yoho.springboot.dal.ITestTableDAO;
 import com.yoho.springboot.dal.TblLoginLogDAO;
 import com.yoho.springboot.dal.model.TblLoginLog;
@@ -36,8 +33,6 @@ public class Example2 {
 	static Logger log = LoggerFactory.getLogger(Example2.class);
 	@Autowired
 	private ITestTableDAO testTableDAO;
-	@Autowired
-	private TestController t;
 	@Autowired
 	private TblLoginLogDAO tblLoginLogDAO;
 	@Value("${redis.proxy.port}")
